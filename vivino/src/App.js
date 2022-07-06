@@ -1,5 +1,7 @@
+import Header from './components/Header/Header';
+
 function App() {
-  return <button class="btn w-64 rounded-full">Button</button>;
+  return <Header />;
 }
 
 export default App;
