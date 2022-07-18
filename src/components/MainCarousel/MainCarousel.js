@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Btn from '../Btn/Btn';
+import SmallCard from '../SmallCard/SmallCard';
 
 const MainCarousel = () => {
   const [isClick, setIsClick] = useState([{ id: 1 }]);
@@ -26,7 +27,7 @@ const MainCarousel = () => {
             return (
               <Btn id={item} handelClick={handelClick} isClick={isClick}>
                 {[...Array(item)].map(count => (
-                  <i id={item} className="fa-solid fa-won-sign p-1" />
+                  <i id={item} className="fa-solid fa-won-sign p-1 " />
                 ))}
               </Btn>
             );
@@ -36,6 +37,21 @@ const MainCarousel = () => {
           <span> 얼마를 기준으로 나열 되었어요</span>
         </div>
       </div>
+      <section className="py-10">
+        <div className="carousel   relative border-solid border-2  ">
+          {[1, 2, 3, 4, 5].map(item => {
+            return <SmallCard id={item} />;
+          })}
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-80 right-80 top-1/2">
+          <a href="#slide1" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide8" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </section>
     </section>
   );
 };
