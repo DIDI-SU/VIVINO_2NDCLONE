@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import Btn from '../Btn/Btn';
 import SmallCard from '../SmallCard/SmallCard';
+import Slider from 'react-slick';
+import './MainCarousel.css';
+import ArrowBtn from '../ArrowBtn/ArrowBtn';
+
+const SET = {
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  nextArrow: <ArrowBtn />,
+  prevArrow: <ArrowBtn />,
+};
 
 const MainCarousel = () => {
   const [isClick, setIsClick] = useState([{ id: 1 }]);
@@ -26,9 +39,9 @@ const MainCarousel = () => {
           {[1, 2, 3, 4].map(item => {
             return (
               <Btn id={item} handelClick={handelClick} isClick={isClick}>
-                {[...Array(item)].map(count => (
-                  <i id={item} className="fa-solid fa-won-sign p-1 " />
-                ))}
+                {[...Array(item)].map(count => {
+                  return <i id={item} className="fa-solid fa-won-sign p-1 " />;
+                })}
               </Btn>
             );
           })}
@@ -38,19 +51,11 @@ const MainCarousel = () => {
         </div>
       </div>
       <section className="py-10">
-        <div className="carousel   relative border-solid border-2  ">
-          {[1, 2, 3, 4, 5].map(item => {
-            return <SmallCard id={item} />;
+        <Slider {...SET}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(item => {
+            return <SmallCard id={item} key={item} />;
           })}
-        </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-80 right-80 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide8" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
+        </Slider>
       </section>
     </section>
   );
