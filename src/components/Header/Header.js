@@ -19,7 +19,7 @@ const Header = () => {
         </div>
         <div className=" p-1">
           <button
-            class="btn"
+            className="btn"
             onClick={() => {
               handleOpen();
             }}

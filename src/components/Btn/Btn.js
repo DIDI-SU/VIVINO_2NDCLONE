@@ -1,8 +1,9 @@
 import './Btn.css';
-const Btn = ({ children, handelClick, isClick, id }) => {
+const Btn = ({ children, handelClick, isClick, id, key }) => {
   return (
     <button
       id={id}
+      key={key}
       onClick={e => handelClick(e)}
       className={
         !isClick.map(item => item.id === id)[0]
