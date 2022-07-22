@@ -6,9 +6,9 @@ const Btn = ({ children, handelClick, isClick, id, key }) => {
       key={key}
       onClick={e => handelClick(e)}
       className={
-        !isClick.map(item => item.id === id)[0]
+        !isClick.map(item => item.id === parseInt(id))[0]
           ? 'btn btn-xs  rounded-full border-red-600 btn-outline  mx-1 hover:bg-gray-100 hover:text-black'
-          : 'bg-red-600 btn btn-xs  rounded-full  btn-outline  mx-1 border-red-600'
+          : 'btn btn-xs  rounded-full bg-point-color border-point-color'
       }
     >
       {children}

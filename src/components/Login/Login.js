@@ -5,7 +5,7 @@ const Login = () => {
   const Random = parseInt(Math.random() * 3);
 
   return (
-    <section className=" flex items-center justify-between bg-white  rounded-lg  w-2/4  h">
+    <section className=" flex items-center justify-between    rounded-lg  w-2/4  bg-footer-top ">
       <div className="h-1/2 w-1/2  ">
         <img
           className="rounded-l-lg"
@@ -13,7 +13,7 @@ const Login = () => {
           alt="로그인창 이미지"
         />
       </div>
-      <div className=" flex items-center justify-between mx-auto">
+      <div className=" flex items-center justify-between mx-auto ">
         <KakaoLogin
           token={process.env.REACT_APP_KAKAO_KEY}
           onSuccess={message => console.log(message)}

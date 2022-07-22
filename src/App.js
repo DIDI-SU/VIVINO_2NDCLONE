@@ -3,7 +3,7 @@ import Login from './components/Login/Login';
 import Modal from './components/Modal/Modal';
 import Main from './pages/Main/Main';
 import Footer from './components/Footer/Footer';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ModalProvider } from './Contexts/Modal/ModalContext';
 
 function App() {

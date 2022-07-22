@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import Modal from '../../components/Modal/Modal';
 const ModalContext = createContext(false);
 
 const ModalProvider = ({ children }) => {

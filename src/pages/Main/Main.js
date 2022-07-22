@@ -1,11 +1,12 @@
 import { useState } from 'react';
+
 import MainCarousel from '../../components/MainCarousel/MainCarousel';
 import Btn from '../../components/Btn/Btn';
 const FILTER = [
-  { id: 1, price: 20000 },
-  { id: 2, price: 30000 },
-  { id: 3, price: 40000 },
-  { id: 4, price: 50000 },
+  { id: 1, price: 20000, name: 'money1' },
+  { id: 2, price: 30000, name: 'money2' },
+  { id: 3, price: 40000, name: 'money3' },
+  { id: 4, price: 50000, name: 'money4' },
 ];
 const FILTER_MAP = new Map(FILTER.map(item => [item.id, item.price]));
 
@@ -14,7 +15,6 @@ const Main = () => {
 
   const handelClick = e => {
     const { id } = e.target;
-    const { key } = e.target;
     if (isClick.map(item => item.id === parseInt(id))[0]) {
       if (isClick.length === 1) {
         return;
@@ -24,7 +24,6 @@ const Main = () => {
         { id: parseInt(id), price: FILTER_MAP.get(parseInt(id)) },
       ]);
   };
-  console.log(isClick);
 
   return (
     <main className="items-center max-w-5xl  mx-auto">
@@ -44,7 +43,13 @@ const Main = () => {
                   isClick={isClick}
                 >
                   {[...Array(parseInt(id))].map(count => {
-                    return <i id={id} className="fa-solid fa-won-sign p-1 " />;
+                    return (
+                      <i
+                        id={id}
+                        key={id}
+                        className="fa-solid fa-won-sign p-1 "
+                      />
+                    );
                   })}
                 </Btn>
               );
